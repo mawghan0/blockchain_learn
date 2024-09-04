@@ -18,7 +18,7 @@ contract SimpleStorage {
         stringToNumber[_name] = _number;
     }
 
-    function store(uint256 _number) public {
+    function store(uint256 _number) public virtual {
         number = _number;
     }
 
