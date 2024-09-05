@@ -7,9 +7,84 @@
 		"abi": [
 			{
 				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "fund",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "ethPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "getConvertionRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -27,7 +102,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "number",
+				"name": "usd",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -75,11 +150,11 @@
 			]
 		},
 		"contracts/FundMe.sol": {
-			"keccak256": "0xb225192222d1d996e8bd6522128dd92cc45ea381aed2b84b216f5d11b72ec288",
+			"keccak256": "0x13e621001c99122bf84a31091ced07e553f64a45caf23189973268587974dfd4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0a4f996f3266667adeb95e0eeb716690b4d91ec2fa69885fc96429295e882b57",
-				"dweb:/ipfs/QmeFPQ758KtBCqTTQ7XgtnfNraqnoHPniYmdb3E9osUn1N"
+				"bzz-raw://ebd8ed288f1375611288ca15b0c4dd45182196e33aca019d7becb0eec4fa6752",
+				"dweb:/ipfs/QmeujiAuiTepmfXQceeXGSLXqZ2hUAactgAjzyWsUGP6oj"
 			]
 		}
 	},
