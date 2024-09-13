@@ -22,8 +22,7 @@ library PriceConvertion {
         ) = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306)
                 .latestRoundData();
         // 2394.48970000
-        answer * 1e10;
-        return uint256(answer);
+        return uint256(answer * 1e10);
     }
 
     function getConvertionRate(uint256 ethPrice) public view returns (uint256) {
