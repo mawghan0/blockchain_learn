@@ -4,24 +4,22 @@ pragma solidity 0.8.26;
 import "./PriceConvertion.sol";
 
 contract FundMe {
-    uint256 public usd = 100;
+    uint256 public constant USD = 100 * 1e18;
     using PriceConvertion for uint256;
-    address public owner;
+    address public immutable i_owner;
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
     uint256 public cek;
+    error NotOwner();
 
     constructor() {
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() public payable {
         cek = msg.value.getConvertionRate();
-        require(
-            cek > usd * 1e18,
-            "error, must be 100$"
-        );
-        
+        require(cek > USD, "error, must be 100$");
+
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] += msg.value;
     }
@@ -52,7 +50,10 @@ contract FundMe {
     }
 
     modifier ownerTest() {
-        require(owner == msg.sender, "You're not the owner");
+        if (i_owner != msg.sender) {
+            revert NotOwner();
+        }
+        // require(i_owner == msg.sender, "You're not the owner");
         _;
     }
 }
